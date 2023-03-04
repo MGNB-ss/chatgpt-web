@@ -24,7 +24,10 @@ let api: ChatGPTAPI | ChatGPTUnofficialProxyAPI
 
   if (process.env.OPENAI_API_KEY) {
     const options: ChatGPTAPIOptions = {
+      model: "gpt-3.5-turbo",
+      temperature: 0.8,
       apiKey: process.env.OPENAI_API_KEY,
+		  presence_penalty: 0.6,
       debug: false,
     }
     let fetchFn
